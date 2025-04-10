@@ -1,128 +1,156 @@
-/* veille.css - Styles spécifiques à la veille technologique */
+/* veille.css - Styles spécifiques pour la page Veille Technologique */
+
 .veille-header {
-    background-color: var(--bg-card);
+    text-align: center;
+    background-color: var(--bg-gray-800);
     padding: 2rem;
-    border-radius: 1rem;
+    border-radius: 8px;
     margin-bottom: 2rem;
+    border: 1px solid var(--border-gray-700);
 }
 
 .veille-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: var(--accent);
+    font-size: 2rem;
+    color: var(--text-white);
 }
 
 .veille-header p {
-    color: var(--text-secondary);
     font-size: 1.2rem;
+    color: var(--text-gray-300);
 }
 
 .veille-section {
-    background-color: var(--bg-card);
-    padding: 2rem;
-    border-radius: 1rem;
-    margin-bottom: 2rem;
+    background-color: var(--bg-gray-800);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--border-gray-700);
 }
 
 .veille-section h2 {
-    color: var(--accent);
     font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-    border-bottom: 2px solid var(--border-color);
-    padding-bottom: 0.5rem;
+    color: var(--text-indigo-400);
+    margin-bottom: 1rem;
 }
 
-.intro-content {
-    color: var(--text-secondary);
-    line-height: 1.6;
+.intro-content p {
+    font-size: 1.1rem;
+    color: var(--text-gray-300);
+    margin-bottom: 1rem;
 }
 
 .key-points {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .point {
-    background-color: var(--bg-dark);
-    padding: 1.5rem;
-    border-radius: 0.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    background-color: var(--bg-gray-900);
+    padding: 1rem;
+    border-radius: 6px;
+    width: calc(50% - 1rem);
+    border: 1px solid var(--border-gray-700);
+    transition: transform 0.3s ease;
+}
+
+.point:hover {
+    transform: scale(1.05);
 }
 
 .point-title {
-    color: var(--accent);
-    font-weight: 500;
+    font-size: 1.2rem;
+    color: var(--text-indigo-400);
+    font-weight: 600;
 }
 
 .point-desc {
-    color: var(--text-secondary);
+    font-size: 1rem;
+    color: var(--text-gray-300);
 }
 
+/* Outils de veille - Cartes */
 .tools-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
 }
 
 .tool-card {
-    background-color: var(--bg-dark);
+    background-color: var(--bg-gray-900);
     padding: 1.5rem;
-    border-radius: 0.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-gray-700);
+    transition: transform 0.3s ease;
+}
+
+.tool-card:hover {
+    transform: translateY(-5px);
 }
 
 .tool-icon {
-    width: 48px;
-    height: 48px;
-    background-color: var(--accent);
-    border-radius: 0.5rem;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--text-primary);
+    background-color: var(--text-indigo-400);
+    border-radius: 50%;
+    color: var(--text-white);
 }
 
 .tool-title {
-    color: var(--text-primary);
-    font-size: 1.2rem;
+    color: var(--text-indigo-400);
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.tool-description {
+    color: var(--text-gray-300);
 }
 
 .source-list {
     list-style: none;
+    padding-left: 1rem;
     margin-top: 0.5rem;
 }
 
 .source-list li {
-    color: var(--text-secondary);
-    margin-bottom: 0.5rem;
-    padding-left: 1.2rem;
-    position: relative;
+    color: var(--text-gray-300);
+    font-size: 1rem;
+    padding: 0.2rem 0;
 }
 
-.source-list li::before {
-    content: "•";
-    color: var(--accent);
-    position: absolute;
-    left: 0;
+/* Section des actualités */
+.refresh-button {
+    background-color: var(--text-indigo-400);
+    color: var(--text-white);
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.refresh-button:hover {
+    background-color: #6366F1;
 }
 
 .news-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
 }
 
 .news-card {
-    background-color: var(--bg-dark);
+    background-color: var(--bg-gray-900);
     padding: 1.5rem;
-    border-radius: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-gray-700);
     transition: transform 0.3s ease;
 }
 
@@ -131,49 +159,35 @@
 }
 
 .news-date {
-    color: var(--accent);
     font-size: 0.9rem;
+    color: var(--text-gray-400);
     margin-bottom: 0.5rem;
 }
 
 .news-title {
-    color: var(--text-primary);
     font-size: 1.2rem;
-    margin-bottom: 1rem;
+    color: var(--text-indigo-400);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
 }
 
 .news-content {
-    color: var(--text-secondary);
-    line-height: 1.6;
+    font-size: 1rem;
+    color: var(--text-gray-300);
 }
 
-.refresh-button {
-    background-color: var(--accent);
-    color: var(--text-primary);
-    border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-bottom: 1.5rem;
-    font-family: 'Poppins', sans-serif;
-}
-
-.refresh-button:hover {
-    background-color: var(--accent-hover);
-}
-
+/* Responsive */
 @media (max-width: 768px) {
-    .veille-header h1 {
-        font-size: 2rem;
+    .key-points {
+        flex-direction: column;
+    }
+
+    .point {
+        width: 100%;
     }
 
     .tools-grid,
     .news-grid {
         grid-template-columns: 1fr;
-    }
-
-    .veille-section {
-        padding: 1.5rem;
     }
 }

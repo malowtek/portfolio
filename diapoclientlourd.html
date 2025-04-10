@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diaporama - Projet Client Lourd</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style/diaporama.css" />
+</head>
+
+<body>
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <a href="index.html" class="sidebar-title">
+                <h1>Malo Le Douarin</h1>
+            </a>
+            <p>Portfolio</p>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="veille.html" class="nav-link">Veille Technologique</a></li>
+            <li><a href="e4.html" class="nav-link">Épreuve E4</a></li>
+            <li><a href="cv.html" class="nav-link">CV</a></li>
+            <li><a href="Diaporama.html" class="nav-link">Diaporama client léger</a></li>
+            <li><a href="diapoclientlourd.html" class="nav-link active">Diaporama client lourd</a></li>
+            <li><a href="stage.html" class="nav-link">Stage</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1 class="page-title">Diaporama - Projet Client Lourd</h1>
+
+        <div class="diaporama-container">
+            <section class="slide active">
+                <img src="asset/projet-client-lourd/structure projet.PNG" alt="Structure du projet Python">
+                <div class="slide-content">
+                    <h2>1. Ressources numériques</h2>
+                    <p>Projet codé en Python avec base de données SQLite. Structure modulaire avec des fichiers pour les tickets, utilisateurs, équipements.</p>
+                </div>
+            </section>
+
+            <section class="slide">
+                <img src="asset/projet-client-lourd/structure projet.PNG" alt="Architecture du code">
+                <div class="slide-content">
+                    <h2>2. Normes et standards</h2>
+                    <p>Organisation du code respectant le principe de la POO et la séparation des responsabilités. Usage de standards Python (sqlite3, fichiers modules).</p>
+                </div>
+            </section>
+
+            <section class="slide">
+                <img src="asset/projet-client-lourd/role.PNG" alt="Rôles et habilitations">
+                <div class="slide-content">
+                    <h2>3. Habilitations</h2>
+                    <p>Gestion des utilisateurs avec rôles (admin, user, technicien). Accès restreint aux fonctions sensibles selon le profil connecté.</p>
+                </div>
+            </section>
+
+            <section class="slide">
+                <img src="asset/projet-client-lourd/check role.PNG" alt="Sauvegarde de la base">
+                <div class="slide-content">
+                    <h2>4. Continuité de service</h2>
+                    <p>La base SQLite peut être sauvegardée manuellement ou via un script. Structure simple, mais efficace pour un usage local.</p>
+                </div>
+            </section>
+
+            <section class="slide">
+                <img src="asset/projet-client-lourd/check role.PNG" alt="Bonne utilisation">
+                <div class="slide-content">
+                    <h2>5. Respect des règles d'utilisation</h2>
+                    <p>Fonctions accessibles selon les droits. Validation des entrées et gestion des erreurs utilisateur prévues.</p>
+                </div>
+            </section>
+
+            <section class="slide">
+                <img src="asset/projet-client-lourd/creation ticket coté utilisateur.PNG" alt="Gestion des tickets">
+                <div class="slide-content">
+                    <h2>6. Gestion des incidents</h2>
+                    <p>Système de tickets pour suivre les incidents, affectation possible à un équipement ou un technicien, et changement d'état (ouvert, en cours, résolu).</p>
+                </div>
+            </section>
+
+            <section class="slide">
+                <img src="asset/projet-client-lourd/requete en terminal quand je demande interface ticket.PNG" alt="Tests manuels">
+                <div class="slide-content">
+                    <h2>7. Tests d’intégration</h2>
+                    <p>Des tests manuels ont été réalisés pour valider le fonctionnement de chaque fonctionnalité du projet.</p>
+                </div>
+            </section>
+
+            <section class="slide">
+                <img src="asset/projet-client-lourd/deploiment.PNG" alt="Déploiement local">
+                <div class="slide-content">
+                    <h2>8. Déploiement</h2>
+                    <p>L'application peut être exécutée via Python ou convertie en .exe pour une installation client lourd. Aucun serveur requis.</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- Navigation -->
+        <div class="diapo-nav">
+            <button id="prevSlide">◀</button>
+            <button id="nextSlide">▶</button>
+        </div>
+    </main>
+
+    <script>
+        const slides = document.querySelectorAll(".slide");
+        let current = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle("active", i === index);
+            });
+        }
+
+        document.getElementById("nextSlide").addEventListener("click", () => {
+            current = (current + 1) % slides.length;
+            showSlide(current);
+        });
+
+        document.getElementById("prevSlide").addEventListener("click", () => {
+            current = (current - 1 + slides.length) % slides.length;
+            showSlide(current);
+        });
+
+        showSlide(current);
+    </script>
+</body>
+</html>

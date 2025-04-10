@@ -1,0 +1,67 @@
+/* clientleger.css - Styles spécifiques pour la page clientleger.html */
+
+.project-description,
+.project-structure,
+.project-features,
+.gitlab-link {
+    background-color: var(--bg-gray-800);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--border-gray-700);
+}
+
+.project-description ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.project-description ul li {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+pre {
+    background-color: var(--bg-gray-900);
+    padding: 1rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-size: 0.9rem;
+    color: var(--text-gray-300);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+table th, table td {
+    border: 1px solid var(--border-gray-700);
+    padding: 0.75rem;
+    text-align: left;
+}
+
+table th {
+    background-color: var(--bg-gray-900);
+    color: var(--text-indigo-400);
+}
+
+table tbody tr:hover {
+    background-color: var(--bg-gray-900);
+}
+
+.btn-gitlab {
+    display: inline-block;
+    background-color: var(--text-indigo-400);
+    color: var(--text-white);
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.btn-gitlab:hover {
+    background-color: #6366F1;
+}

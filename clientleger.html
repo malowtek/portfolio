@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet Client Léger - Natation Develop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/clientleger.css">
+</head>
+
+<body>
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <a href="index.html" class="sidebar-title">
+                <h1>Malo Le Douarin</h1>
+            </a>
+            <p>Portfolio</p>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="veille.html" class="nav-link">Veille Technologique</a></li>
+            <li><a href="e4.html" class="nav-link">Épreuve E4</a></li>
+            <li><a href="cv.html" class="nav-link">CV</a></li>
+            <li><a href="Diaporama.html" class="nav-link">Diaporama client leger</a></li>
+            <li><a href="Diapoclientlourd.html" class="nav-link">Diaporama client Lourd</a></li>
+            <li><a href="stage.html" class="nav-link active">Stage</a></li>
+            
+        </ul>
+    </nav>
+
+    <main>
+        <h1 class="page-title">Projet Client Léger - Natation Develop</h1>
+
+        <section class="project-description">
+            <h2>Présentation du projet</h2>
+            <p>
+                Le projet "Natation Develop" est une application web permettant de gérer les compétitions et les performances des nageurs.
+                Son but est de fournir une solution complète aux clubs de natation pour :
+            </p>
+            <ul>
+                <li>📌 Enregistrer et suivre les performances des nageurs</li>
+                <li>📌 Gérer les compétitions</li>
+                <li>📌 Administrer les utilisateurs (entraîneurs, nageurs, administrateurs)</li>
+                <li>📌 Offrir une API REST pour faciliter l’intégration avec d’autres systèmes</li>
+            </ul>
+        </section>
+
+        <section class="project-structure">
+            <h2>Structure du projet</h2>
+            <pre>
+natation-develop/
+│--  app/                # Code métier (Modèles, Contrôleurs)
+│--  routes/             # Définition des routes web et API
+│--  resources/views/    # Fichiers Blade (Interface utilisateur)
+│--  database/           # Migrations et modèles de la base de données
+│--  public/             # Assets publics (CSS, JS, images)
+│--  tests/              # Tests unitaires et fonctionnels
+│--  documents/          # Documentation et suivi du projet
+│--  .env.example        # Variables d’environnement
+│--  composer.json       # Dépendances PHP (Laravel, PHPUnit)
+│--  package.json        # Dépendances JS (Tailwind, Chart.js)
+            </pre>
+        </section>
+
+        <section class="project-features">
+            <h2>Productions réalisées</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Fonctionnalité</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Authentification & rôles</td>
+                        <td>Gestion des comptes avec rôles : Admin, Entraîneur, Nageur</td>
+                    </tr>
+                    <tr>
+                        <td>Gestion des nageurs</td>
+                        <td>Ajout, modification, suppression et consultation des nageurs</td>
+                    </tr>
+                    <tr>
+                        <td>Gestion des compétitions</td>
+                        <td>Planification et suivi des compétitions</td>
+                    </tr>
+                    <tr>
+                        <td>Suivi des performances</td>
+                        <td>Stockage et affichage des résultats des nageurs</td>
+                    </tr>
+                    <tr>
+                        <td>API REST avec Swagger</td>
+                        <td>API pour accéder aux données au format JSON</td>
+                    </tr>
+                    <tr>
+                        <td>Visualisation des performances</td>
+                        <td>Graphiques des temps et progressions des nageurs</td>
+                    </tr>
+                    <tr>
+                        <td>Sécurité & Permissions</td>
+                        <td>Middleware pour restreindre l'accès selon le rôle</td>
+                    </tr>
+                    <tr>
+                        <td>Documentation technique</td>
+                        <td>Guide d’installation, d’utilisation et API</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="gitlab-link">
+            <h2>Accès au code source</h2>
+            <p>Le projet est disponible sur GitLab. Cliquez sur le bouton ci-dessous pour y accéder :</p>
+            <a href="https://gitlab.com/maloledouarin/projet-client-leger/-/tree/dev?ref_type=heads" class="btn-gitlab" target="_blank">🔗 Accéder au GitLab</a>
+        </section>
+    </main>
+
+</body>
+
+</html>

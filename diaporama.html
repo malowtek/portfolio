@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diaporama - Projet Client Léger</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style/diaporama.css" />
+</head>
+
+<body>
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <a href="index.html" class="sidebar-title">
+                <h1>Malo Le Douarin</h1>
+            </a>
+            <p>Portfolio</p>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="veille.html" class="nav-link">Veille Technologique</a></li>
+            <li><a href="e4.html" class="nav-link">Épreuve E4</a></li>
+            <li><a href="cv.html" class="nav-link">CV</a></li>
+            <li><a href="Diaporama.html" class="nav-link active">Diaporama client leger</a></li>
+            <li><a href="Diapoclientlourd.html" class="nav-link">Diaporama client Lourd</a></li>
+            <li><a href="stage.html" class="nav-link active">Stage</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1 class="page-title">Diaporama - Projet Client Léger</h1>
+    
+        <div class="diaporama-container">
+            <!-- SLIDES START -->
+            <section class="slide .active">
+                <img src="asset/projet-client-leger/Vue-ensemble-du-code.jpg" alt="Architecture Laravel">
+                <div class="slide-content">
+                    <h2>1. Ressources numériques utilisées</h2>
+                    <p>Architecture du projet Laravel avec utilisation de PHP, Blade, JS, CSS et SQLite. Organisation MVC respectée.</p>
+                </div>
+            </section>
+    
+            <section class="slide">
+                <img src="asset/projet-client-leger/Exploitation-de-référentiels-&-normes.jpg" alt="Migration Laravel">
+                <div class="slide-content">
+                    <h2>2. Normes et standards</h2>
+                    <p>Utilisation de migrations et des relations Eloquent pour structurer les entités comme les programmes, exercices et utilisateurs.</p>
+                </div>
+            </section>
+    
+            <section class="slide">
+                <img src="asset/projet-client-leger/Habilitations-Rôles.jpg" alt="Gestion des rôles">
+                <div class="slide-content">
+                    <h2>3. Habilitations et rôles</h2>
+                    <p>Mise en place de rôles avec Laravel Auth. Chaque rôle accède à des fonctionnalités précises selon ses droits.</p>
+                </div>
+            </section>
+    
+            <section class="slide">
+                <img src="asset/projet-client-leger/Sauvegardes-et-continuité-de-service.jpg" alt="Fichier .env et artisan">
+                <div class="slide-content">
+                    <h2>4-5. Continuité de service et sauvegardes</h2>
+                    <p>Utilisation de migrations pour versionner la base de données. Possibilité d’automatiser les sauvegardes en production.</p>
+                </div>
+            </section>
+    
+            <section class="slide">
+                <img src="asset/projet-client-leger/Respect des règles d’usage.jpg" alt="Formulaire sécurisé">
+                <div class="slide-content">
+                    <h2>6. Respect des règles d’utilisation</h2>
+                    <p>Gestion sécurisée des accès avec vérification des rôles et des données saisies.</p>
+                </div>
+            </section>
+    
+            <section class="slide">
+                <img src="asset/projet-client-leger/Gestion-de-demandes-services.PNG" alt="Coach créant un programme">
+                <div class="slide-content">
+                    <h2>7-8. Gestion des demandes utilisateurs</h2>
+                    <p>Un coach peut gérer les programmes d'entraînement, répondant ainsi aux besoins spécifiques de chaque sportif.</p>
+                </div>
+            </section>
+    
+            <section class="slide">
+                <img src="asset/projet-client-leger/Valorisation de l’image.jpg" alt="Dashboard du site">
+                <div class="slide-content">
+                    <h2>9. Valorisation de l’image de l’organisation</h2>
+                    <p>Interface claire et professionnelle mettant en valeur la structure d'entraînement du club.</p>
+                </div>
+            </section>
+    
+            <section class="slide">
+                <img src="asset/projet-client-leger/Suivi et évaluation.jpg" alt="Historique Git">
+                <div class="slide-content">
+                    <h2>12. Suivi et évaluation</h2>
+                    <p>Suivi de version avec Git. Les changements sont documentés pour assurer le bon suivi du développement.</p>
+                </div>
+            </section>
+    
+            <section class="slide">
+                <img src="asset/projet-client-leger/Tests.jpg" alt="Console tests">
+                <div class="slide-content">
+                    <h2>13. Tests d’intégration et d’acceptation</h2>
+                    <p>Des tests manuels ont été réalisés pour valider la fiabilité du système et sa conformité aux besoins.</p>
+                </div>
+            </section>
+    
+            <section class="slide">
+                <img src="asset/projet-client-leger/Déploiement.jpg" alt="Déploiement Laravel">
+                <div class="slide-content">
+                    <h2>14. Déploiement du service</h2>
+                    <p>Déploiement facilité par Laravel : artisan, migration automatique, gestion des environnements.</p>
+                </div>
+            </section>
+            <!-- SLIDES END -->
+        </div>
+    
+        <!-- Navigation -->
+        <div class="diapo-nav">
+            <button id="prevSlide">◀</button>
+            <button id="nextSlide">▶</button>
+        </div>
+    </main>
+    
+    <script>
+        const slides = document.querySelectorAll(".slide");
+        let current = 0;
+    
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle("active", i === index);
+            });
+        }
+    
+        document.getElementById("nextSlide").addEventListener("click", () => {
+            current = (current + 1) % slides.length;
+            showSlide(current);
+        });
+    
+        document.getElementById("prevSlide").addEventListener("click", () => {
+            current = (current - 1 + slides.length) % slides.length;
+            showSlide(current);
+        });
+    
+        showSlide(current); // Init
+    </script>
+    
+</body>
+
+
+
+</html>

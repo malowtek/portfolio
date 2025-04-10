@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stage - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style/stage.css" />
+</head>
+
+<body>
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <a href="index.html" class="sidebar-title">
+                <h1>Malo Le Douarin</h1>
+            </a>
+            <p>Portfolio</p>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="veille.html" class="nav-link">Veille Technologique</a></li>
+            <li><a href="e4.html" class="nav-link">Épreuve E4</a></li>
+            <li><a href="cv.html" class="nav-link">CV</a></li>
+            <li><a href="Diaporama.html" class="nav-link">Diaporama client léger</a></li>
+            <li><a href="Diapoclientlourd.html" class="nav-link">Diaporama client lourd</a></li>
+            <li><a href="stage.html" class="nav-link active">Stage</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1 class="page-title">Projet de stage : Flashvote</h1>
+
+        <div class="diaporama-container">
+
+            <!-- Slide 0 : Présentation de l'entreprise -->
+            <section class="slide active">
+                <img src="asset/stage/logo.jpg" alt="Logo Feldrise">
+                <div class="slide-content">
+                    <h2>0. Présentation de l'entreprise</h2>
+                    <p>
+                        Mon stage s'est déroulé chez <strong>Feldrise</strong>, une entreprise de développement web et mobile située à Rennes.
+                        Elle compte entre 5 et 10 collaborateurs et travaille dans un espace de coworking.
+                        L'entreprise est dirigée par <strong>Victor Dennis</strong>.
+                    </p>
+                    <p>
+                        Feldrise accompagne des particuliers et professionnels dans la réalisation de leurs projets numériques :
+                        prise de rendez-vous, écoute du besoin, proposition technique et budgétaire, puis répartition des tâches pour le développement.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Slide 1 -->
+            <section class="slide">
+                <img src="asset/stage/FLASHVOTE.png" alt="Présentation Flashvote">
+                <div class="slide-content">
+                    <h2>1. Présentation du projet</h2>
+                    <p>Flashvote est une application mobile Flutter permettant de créer et partager des sondages avec ses amis ou en public. Ce projet a été réalisé durant mon stage.</p>
+                </div>
+            </section>
+
+            <!-- Slide 2 -->
+            <section class="slide">
+                <img src="asset/stage/bdd firebase.png" alt="Firebase database">
+                <div class="slide-content">
+                    <h2>2. Base de données Firebase</h2>
+                    <p>Les utilisateurs, sondages, votes et relations d’amis sont gérés via Firestore. Les données sont synchronisées en temps réel.</p>
+                </div>
+            </section>
+
+            <!-- Slide 3 -->
+            <section class="slide">
+                <img src="asset/stage/CONNEXION.png" alt="Authentification Firebase">
+                <div class="slide-content">
+                    <h2>3. Authentification sécurisée</h2>
+                    <p>J'ai mis en place une authentification via Firebase Auth, avec gestion complète de l’inscription, connexion et sécurité des sessions utilisateur.</p>
+                </div>
+            </section>
+
+            <!-- Slide 4 -->
+            <section class="slide">
+                <img src="asset/stage/INSCRIPTION.png" alt="Page d'inscription">
+                <div class="slide-content">
+                    <h2>4. Création de profil</h2>
+                    <p>Les nouveaux utilisateurs créent un profil via une page dédiée. Les données sont enregistrées dans la base Firebase et sécurisées.</p>
+                </div>
+            </section>
+
+            <!-- Slide 5 -->
+            <section class="slide">
+                <img src="asset/stage/FLASHVOTE.png" alt="Accueil Flashvote">
+                <div class="slide-content">
+                    <h2>5. Accueil - Feed personnalisé</h2>
+                    <p>La page d’accueil affiche uniquement les sondages créés par les amis de l’utilisateur. Un filtre permet de voir les sondages publics ou privés.</p>
+                </div>
+            </section>
+
+            <!-- Slide 6 -->
+            <section class="slide">
+                <img src="asset/stage/exemple acceuil.jpg" alt="Page Explorer">
+                <div class="slide-content">
+                    <h2>6. Page Explorer</h2>
+                    <p>Cette section permet de consulter tous les sondages publics de la plateforme, même ceux créés par des inconnus. Cela favorise l’interaction.</p>
+                </div>
+            </section>
+
+            <!-- Slide 7 -->
+            <section class="slide">
+                <img src="asset/stage/SONDAGE.png" alt="Créer un sondage">
+                <div class="slide-content">
+                    <h2>7. Création de sondage</h2>
+                    <p>Les utilisateurs peuvent créer un sondage via un formulaire : texte, réponses possibles, et visibilité (public ou privé).</p>
+                </div>
+            </section>
+
+            <!-- Slide 8 -->
+            <section class="slide">
+                <img src="asset/stage/securité.PNG" alt="Règles de sécurité">
+                <div class="slide-content">
+                    <h2>8. Sécurité des données</h2>
+                    <p>J’ai appliqué les règles de sécurité Firebase pour restreindre les accès en fonction du statut (propriétaire du sondage, invité, etc.).</p>
+                </div>
+            </section>
+
+        </div>
+
+        <div class="diapo-nav">
+            <button id="prevSlide">◀</button>
+            <button id="nextSlide">▶</button>
+        </div>
+    </main>
+
+    <script>
+        const slides = document.querySelectorAll(".slide");
+        let current = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle("active", i === index);
+            });
+        }
+
+        document.getElementById("nextSlide").addEventListener("click", () => {
+            current = (current + 1) % slides.length;
+            showSlide(current);
+        });
+
+        document.getElementById("prevSlide").addEventListener("click", () => {
+            current = (current - 1 + slides.length) % slides.length;
+            showSlide(current);
+        });
+
+        showSlide(current); // init
+    </script>
+</body>
+
+</html>

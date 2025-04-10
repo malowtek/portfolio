@@ -1,6 +1,18 @@
 /* page1.css - Styles spécifiques à la page d'accueil */
+
+/* Ajout des variables CSS */
+:root {
+    --bg-card: #1F2937;
+    --bg-dark: #111827;
+    --accent: #6366F1;
+    --text-primary: #FFFFFF;
+    --text-secondary: #D1D5DB;
+    --border-color: #374151;
+}
+
 .hero-section {
     display: flex;
+    flex-wrap: wrap;
     gap: 4rem;
     align-items: center;
     padding: 2rem;
@@ -42,6 +54,8 @@
     padding: 2rem;
     border-radius: 0.5rem;
     font-family: 'Consolas', monospace;
+    color: var(--text-primary);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .code-block {
@@ -61,10 +75,15 @@
     color: #9CDCFE;
 }
 
+/* À propos */
 .about-section,
 .formation-section,
 .quick-links {
+    background-color: var(--bg-card);
+    padding: 2rem;
+    border-radius: 1rem;
     margin-bottom: 3rem;
+    border: 1px solid var(--border-color);
 }
 
 h2 {
@@ -81,6 +100,7 @@ h2 {
     font-size: 1.1rem;
 }
 
+/* Formation */
 .formation-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -88,14 +108,16 @@ h2 {
 }
 
 .formation-card {
-    background-color: var(--bg-card);
+    background-color: var(--bg-dark);
     padding: 1.5rem;
     border-radius: 0.5rem;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border-color);
 }
 
 .formation-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(99, 102, 241, 0.2);
 }
 
 .formation-date {
@@ -113,6 +135,7 @@ h2 {
     color: var(--text-secondary);
 }
 
+/* Liens rapides */
 .links-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -120,16 +143,18 @@ h2 {
 }
 
 .quick-link-card {
-    background-color: var(--bg-card);
+    background-color: var(--bg-dark);
     padding: 1.5rem;
     border-radius: 0.5rem;
     text-decoration: none;
     transition: transform 0.3s ease, background-color 0.3s ease;
+    border: 1px solid var(--border-color);
 }
 
 .quick-link-card:hover {
     transform: translateY(-5px);
     background-color: var(--accent);
+    box-shadow: 0 8px 15px rgba(99, 102, 241, 0.2);
 }
 
 .quick-link-card h3 {
@@ -146,22 +171,29 @@ h2 {
     color: var(--text-primary);
 }
 
+/* Responsive */
 @media (max-width: 768px) {
     .hero-section {
         flex-direction: column;
+        text-align: center;
         padding: 1.5rem;
     }
 
     .hero-content h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
     .subtitle {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
     }
 
     .code-illustration {
         width: 100%;
         font-size: 0.9rem;
+    }
+
+    .formation-cards,
+    .links-grid {
+        grid-template-columns: 1fr;
     }
 }
