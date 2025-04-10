@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veille Technologique - Malo Le Douarin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/veille.css">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <h1>Malo Le Douarin</h1>
+            <p>Portfolio</p>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="veille.html" class="nav-link active">Veille Technologique</a></li>
+            <li><a href="e4.html" class="nav-link">Épreuve E4</a></li>
+            <li><a href="cv.html" class="nav-link">CV</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="veille-header">
+            <h1>Veille Technologique</h1>
+            <p>Suivi des avancées en informatique quantique</p>
+        </div>
+
+        <section class="veille-section">
+            <h2>Les Ordinateurs Quantiques</h2>
+            <div class="intro-content">
+                <p>Ma veille technologique se concentre sur les avancées dans le domaine des ordinateurs quantiques,
+                    un secteur en pleine expansion qui promet de révolutionner l'informatique telle que nous la
+                    connaissons.</p>
+                <div class="key-points">
+                    <div class="point">
+                        <span class="point-title">Qubits Supraconducteurs</span>
+                        <span class="point-desc">Suivi des dernières innovations en matière de qubits</span>
+                    </div>
+                    <div class="point">
+                        <span class="point-title">Applications Pratiques</span>
+                        <span class="point-desc">Cryptographie, optimisation et simulation moléculaire</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="veille-section">
+            <h2>Outils de Veille</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-icon rss-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M4 11a9 9 0 0 1 9 9"></path>
+                            <path d="M4 4a16 16 0 0 1 16 16"></path>
+                            <circle cx="5" cy="19" r="1"></circle>
+                        </svg>
+                    </div>
+                    <h3 class="tool-title">Flux RSS</h3>
+                    <p class="tool-description">
+                        Agrégation des actualités des sites spécialisés:
+                    <ul class="source-list">
+                        <li>Quantum Computing Report</li>
+                        <li>Nature Quantum Information</li>
+                        <li>IBM Quantum Blog</li>
+                    </ul>
+                    </p>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-icon alert-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="tool-title">Google Alerts</h3>
+                    <p class="tool-description">
+                        Notifications configurées pour les mots-clés:
+                    <ul class="source-list">
+                        <li>"Quantum Computing"</li>
+                        <li>"Quantum Supremacy"</li>
+                        <li>"Quantum Error Correction"</li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="veille-section">
+            <h2>Dernières Actualités</h2>
+            <button class="refresh-button" onclick="refreshNews()">
+                Actualiser les nouvelles
+            </button>
+            <div id="news-container" class="news-grid">
+                <!-- Le contenu sera chargé dynamiquement via JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Fonction pour simuler le chargement des actualités
+        function refreshNews() {
+            const newsContainer = document.getElementById('news-container');
+
+            const news = [
+                {
+                    date: '20 Février 2024',
+                    title: 'IBM annonce une avancée en qubits supraconducteurs',
+                    content: 'Nouveau record de cohérence quantique atteint.'
+                },
+                {
+                    date: '18 Février 2024',
+                    title: 'Cryptographie post-quantique',
+                    content: 'Nouveaux algorithmes résistants aux ordinateurs quantiques.'
+                },
+                {
+                    date: '15 Février 2024',
+                    title: 'Google Quantum AI',
+                    content: 'Réduction significative des erreurs quantiques.'
+                }
+            ];
+
+            newsContainer.innerHTML = news.map(item => `
+                <div class="news-card">
+                    <div class="news-date">${item.date}</div>
+                    <h3 class="news-title">${item.title}</h3>
+                    <p class="news-content">${item.content}</p>
+                </div>
+            `).join('');
+        }
+
+        // Charger les actualités au chargement de la page
+        document.addEventListener('DOMContentLoaded', refreshNews);
+    </script>
+</body>
+
+</html>

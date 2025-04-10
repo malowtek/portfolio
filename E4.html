@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Épreuve E4 - Malo Le Douarin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/E4.css">
+</head>
+
+<body>
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <h1>Malo Le Douarin</h1>
+            <p>Portfolio</p>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="veille.html" class="nav-link">Veille Technologique</a></li>
+            <li><a href="e4.html" class="nav-link active">Épreuve E4</a></li>
+            <li><a href="cv.html" class="nav-link">CV</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1 class="page-title">Compétences Validées - Épreuve E4</h1>
+
+        <p class="description">
+            Durant mon BTS SIO SLAM, j'ai développé et validé plusieurs compétences clés dans différents domaines de
+            l'informatique.
+            Voici un aperçu des principales réalisations et compétences acquises.
+        </p>
+
+        <div class="competences-grid">
+            <a href="admin-systeme.html" class="competence-card clickable">
+                <h2>Administration Système</h2>
+                <ul>
+                    <li>Configuration et déploiement d'un serveur DHCP</li>
+                    <li>Mise en place et gestion de GLPI</li>
+                    <li>Administration système au quotidien</li>
+                </ul>
+                <div class="card-overlay">
+                    <span>Voir les détails</span>
+                </div>
+            </a>
+
+            <!-- Les autres cartes restent identiques pour l'instant -->
+            <a href="base-donnees.html" class="competence-card clickable">
+                <h2>Bases de Données</h2>
+                <ul>
+                    <li>Gestion de bases de données via DBeaver</li>
+                    <li>Administration MongoDB</li>
+                    <li>Modélisation et conception de schémas</li>
+                </ul>
+                <div class="card-overlay">
+                    <span>Voir les détails</span>
+                </div>
+            </a>
+
+            <!-- ... autres cartes ... -->
+        </div>
+    </main>
+
+    <script>
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            if (link.href === window.location.href) {
+                link.classList.add('active');
+            }
+        });
+    </script>
+</body>
+
+</html>
